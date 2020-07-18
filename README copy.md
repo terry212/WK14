@@ -43,7 +43,19 @@ Within the config folder we will create another folder called 'middleware'. It d
 
 Folder: config:
 
-The config.json file configures the environment. It specifies the username, password, database being utilized, host, and dialect.
+The config.json file configures the environment. It specifies the username, password, database being utilized, host, and dialect. It tells the CLI how to connect with the database.
 
 The passport.js is the fill that will require the passport module and the strategy of the passport. Also will need the database established by requiring the models folder. Here you will write code that will use passport to establish a strategy for users trying to login. You will need to look at the database to verify the credentials are correct. Afterwards, use passport to serialize and deserialize the user to retain authentication across different HTTP requests. Don't forget to export the configured passport to be utilized in other files and folders.
 
+Folder: models:
+
+In the index.js file, we will need to require:
+1. fs to read and write file systems
+2. path to locate the proper location of the file we will read from or write to.
+3. sequilize to utilize the framework which allows for the models, seeding, etc. to be made possible.
+4. config file which will have the information on how to connect to the database.
+5. basename which will extract the filename from a file path.
+6. default environment established
+7. variable db with empty curly braces
+
+Using the required and defined variables you can create the sequlizing of your config file. Then we establish our file systems.
