@@ -31,7 +31,7 @@ We will require all the npm packages and the passport file that you will later c
 After declaring what is required then a port is configured and the database will need to be required of the models. This will sync your database which you will configure in the models folder. 
 The next step is to create an express app and configure middleware needed for authentication such as express.json() which is a built-in middleware function in express that parses incoming requests with JSON payloads. In this project, the middleware handles parsing and handles static files.
 Next, we will need to manage the login status of the user where will utilize passport and sessions. Based on the express app we will also need to require the routes.
-Lastly, spin up the server using sequilize and syncing the database.
+Lastly, spin up the server using sequelize and syncing the database.
 
 Folders:
 
@@ -52,10 +52,13 @@ Folder: models:
 In the index.js file, we will need to require:
 1. fs to read and write file systems
 2. path to locate the proper location of the file we will read from or write to.
-3. sequilize to utilize the framework which allows for the models, seeding, etc. to be made possible.
+3. sequelize to utilize the ORM [Object Relational Mapper] which allows for the models, seeding, etc. to be managed easier. Mapping out the objects to relational databases.
 4. config file which will have the information on how to connect to the database.
 5. basename which will extract the filename from a file path.
 6. default environment established
 7. variable db with empty curly braces
 
-Using the required and defined variables you can create the sequlizing of your config file. Then we establish our file systems.
+Using the required and defined variables you can create a new instance of sequelize of your config file envrionment. These are the parameters needed for the database to run. Then we establish our file system files to create the proper database relationship and association. We are able to real and map out each file in the model folder. Export the db module.
+
+In the user.js, we begin by making necessary requirements. The only needed requirement would be bcrypt which will be used to conceal the password that a user sets. In creating the user model, we define a table for users which will have two columns of information, email and password. Like SQL, we define certain information for the two pieces of information such as DataTypes or validation, etc. Bcrypt will be used to do two things: validate the password and create a function to automatically hash the user's password. This will be exported as a module.
+
