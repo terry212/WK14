@@ -62,3 +62,23 @@ Using the required and defined variables you can create a new instance of sequel
 
 In the user.js, we begin by making necessary requirements. The only needed requirement would be bcrypt which will be used to conceal the password that a user sets. In creating the user model, we define a table for users which will have two columns of information, email and password. Like SQL, we define certain information for the two pieces of information such as DataTypes or validation, etc. Bcrypt will be used to do two things: validate the password and create a function to automatically hash the user's password. This will be exported as a module.
 
+Folder: public:
+
+This folder is the public folder that will contain public information that the user can view (html files) which contains the stylesheets and the javascript that will handle the frontend visual rendering.
+
+The login html file starts with the html boilerplate and between the head tag in contains the title; meta data tags that defines the character encoding of the document and the user visible area of the webpage; and links to the stylesheets local stylesheet and the bootstrap cdn stylesheet. Between the body tag, the login form is created and the last lines of code before closing the body tag will be the scripts of the jquery and another script that will locate the proper local javascript. The signup and members html follow the same format as the login.
+
+Folder: public: js:
+
+In this js folder nested in the public folder, the login javascript file will wrap the logic in a document.ready function which purpose is to ensure that the DOM has been loaded before running the functions inside the ready function. We define the variables that grab the id or class property of the form created in the login html file. An onclick function is created which will validate the user's credential when attempting to login. Conditional logic is created if not information was entered in the input fields. In the event, a call to a seperate functions which does a post to the api login route which will pass the entered information which will load the members page upon success and logs the error if unsuccessful.
+
+The members javascript file utilizes the ready function and makes a GET request that will update the members HTML page with the logged in users' information.
+
+The signup javascript utilizes the ready function and nested within is the scripts that will handle the signup process. The variables will grab the id and the class of the signup form. On the submission process, the preventDefault function is used to keep the page from the default behavior when the button is clicked. Within the event, a function is called which does a post to the signup api route with the entered information which upon success will redirect the user to the members html; however, if unsuccessful, an alert message will be displayed of the JSON response of the error object.
+
+Folder: public: sytlesheets:
+
+In this folder, we will use css to write some of the styling that is not handles by bootstrap. Bootstrap contains stylesheet which can be used through the documentation provided through the use of special class name etc. This is why we linked the CDN of the bootstrap link in the html files.
+
+Folder: routes:
+
