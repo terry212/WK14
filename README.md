@@ -29,13 +29,31 @@ THEN I understand the codebase
 ```
 - - -
 
-## Submission on BCS
+### Technology
 
-You are required to submit the following:
+The following technology is being used
 
-* A link to a Google Doc or video explaining the application in `Develop/`. 
+  * HTML 5
+  * CSS
+  * Javascript
+  * Express
+  * Sequelize
+  * MySQL
+  * Passport
+  * NPM
 
-_Note: Don't forget to change the sharing settings on your Google Doc._
+### Links
+
+Google Docs link:
+
+   * <https://docs.google.com/document/d/1IEXdOuZYDhe4r3nzPWP7Z5xG1y0Jm0Q9lYlkxrlcrRc/edit?usp=sharing>
+
+Go to the link above
+
+Repo link:
+
+   * <https://github.com/terry212/WK14>
+
 
 - - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+© Copyright 2020. All Rights Reserved.
